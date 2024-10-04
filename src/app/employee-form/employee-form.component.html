@@ -1,0 +1,63 @@
+<h2 class="text-center my-5">{{isEditing? 'Edit'  : 'Create'}} Employee</h2>
+
+<div class="text-danger text-center" *ngIf="errorMessage !== ''">
+    {{ errorMessage }}
+</div>
+
+<form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()" #employeeForm="ngForm" class="border rounded p-5 w-50 mx-auto mb-5">
+    <div class="mb-3">
+        <label class="form-label" for="firstName">First Name*</label>
+        <input #firstName="ngModel" class="form-control" type="text"  [(ngModel)]="employee.firstName" name="firstName" required>
+        <!-- template driven form validation using template reference #firstName='ngModel' -->
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" >
+            <!-- alternative approach for the class would be  class="alert alert-danger" -->
+            <div *ngIf="firstName.errors?.['required']" class="text-danger">
+                First Name is required
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="lastName">Last Name*</label>
+        <input #lastName="ngModel" class="form-control" type="text"  [(ngModel)]="employee.lastName" name="lastName" required>
+        <!-- template driven form validation using #lastName='ngModel' -->
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+            <div *ngIf="lastName.errors?.['required']" class="text-danger">
+                Last Name is required
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="email">Email*</label>
+        <input #email="ngModel" class="form-control" type="email"  [(ngModel)]="employee.email" name="email" required>
+        <!-- template driven form validation using #email='ngModel' -->
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" >
+            <div *ngIf="email.errors?.['required']" class="text-danger">
+                Email is required
+            </div>
+            <div *ngIf="email.errors?.['email']" class="text-danger">
+                Email is invalid
+            </div>
+        </div>  
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="phone">Phone*</label>
+        <input #phone="ngModel" class="form-control" type="tel"  [(ngModel)]="employee.phone" name="phone" required>
+        <!-- template driven form validation using #phone='ngModel' -->
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" >
+            <div *ngIf="phone.errors?.['required']" class="text-danger">
+                Phone is required
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="position">Position*</label>
+        <input #position="ngModel" class="form-control" type="text"  [(ngModel)]="employee.position" name="position" required>
+        <!-- template driven form validation using #position='ngModel' -->
+        <div *ngIf="position.invalid && (position.dirty || position.touched)">
+            <div *ngIf="position.errors?.['required']" class="text-danger">
+                Position is required
+            </div>
+        </div>
+    </div>
+    <button  class="btn btn-primary" type="submit" [disabled]="employeeForm.invalid" >{{isEditing ? 'Edit'  : 'Create'}}</button>
+</form>
