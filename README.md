@@ -1,28 +1,43 @@
-# HrnetApp
+# HRnet Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+A comprehensive HR management application for creating and managing employee records. The app leverages powerful libraries for state management, routing, and styling in both React and Angular. It features a custom `EmployeeTable` component that offers sortable, filterable, and paginated views of employee data.
 
-## Development server
+- **React Version**: Uses Redux for state management and TypeScript for type safety. Deployed at [https://hrnetpuenaruionut.netlify.app/](https://hrnetpuenaruionut.netlify.app/).
+- **Angular Version**: An alternative implementation, leveraging Angular’s core framework and Bootstrap styling.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- **Employee Management**: Create, view, and manage employee records.
+- **State Persistence**: Persistent state using Redux in React and NgRx in Angular.
+- **Custom Table Component**: EmployeeTable supports sorting, filtering, and pagination.
+- **Responsive UI**: Fully responsive design with SCSS and Bootstrap.
+- **Routing**: Simple routing with React Router and Angular Router.
+- **Testing**: Unit and end-to-end testing with Vitest and Playwright in React, Karma in Angular.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Technologies
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Technology          | React Version            | Angular Version          |
+|---------------------|--------------------------|---------------------------|
+| **UI Library**      | React                    | Angular                   |
+| **State Management**| React-Redux, Redux Persist | NgRx                     |
+| **Styling**         | SCSS                     | Bootstrap                 |
+| **Routing**         | React Router             | Angular Router            |
+| **Testing**         | Vitest, Playwright       | Jasmine, Karma            |
+| **Documentation**   | TypeDoc                  | Compodoc                  |
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Prerequisites
 
-## Further help
+Before starting, ensure you have the following:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# HrNet_Angular
+- **Node.js**: Version `v20.17.0`
+- **npm**: Version `8.0.0` or higher
+- **Visual Studio Code** (recommended)
+
+---
